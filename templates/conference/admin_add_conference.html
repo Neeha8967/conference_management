@@ -1,0 +1,47 @@
+{% extends 'conference/adminbase.html' %}
+{% load widget_tweaks %}
+{% block content %}
+<head>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+  <style>
+       <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+  a:link {
+        text-decoration: none;
+      }
+    
+  </style>
+</head>
+<h2 style="text-align:center; color:blue;">ADD CONFERENCE</h2>
+<form method="POST" autocomplete="off" style="margin:100px;margin-top: 0px;">
+    {%csrf_token%}
+    <div class="form-group">
+      <label for="course_name">Category</label>
+      {% render_field conferenceForm.category class="form-control" placeholder="Web Development" %}
+
+      <label for="course_name">Conference Name</label>
+      {% render_field conferenceForm.conference_name class="form-control" placeholder="Final Bootcamp" %}
+
+      <label for="course_name">Duration(Hour)</label>
+      {% render_field conferenceForm.Duration class="form-control" placeholder="3" %}
+
+      <label for="course_name">Venue</label>
+      {% render_field conferenceForm.venue class="form-control" placeholder="New Delhi" %}
+
+      <label for="course_name">Date</label>
+      {% render_field conferenceForm.Date class="form-control" placeholder="mm/dd/yyyy 23:59:59" %}
+
+
+    </div>
+    
+    
+<br>
+    <button type="submit" class="btn btn-primary">ADD</button>
+  </form>
+<br><br><br><br>
+{% endblock content %}
